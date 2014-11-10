@@ -8,7 +8,7 @@
  * do proper ghost mechanics (blinky/wimpy etc)
  */
 
-var NONE        = 4,
+var NONE        = 4, //comment to test
     UP          = 3,
     LEFT        = 2,
     DOWN        = 1,
