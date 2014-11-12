@@ -2,21 +2,21 @@
 	<html>
 	  <head>
 		<meta charset="utf-8" />
-		<title>Macman</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<title>The Macman Game</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<script src="js/pacman.js"></script>
-	    <script src="js/modernizr-1.5.min.js"></script>
-		
+	    <script src="js/modernizr-1.5.min.js"></script>	
 	</head>
 
-	<body bgcolor="#6495ED">
+	<body bgcolor="#6495ED">	
 	  <div>
+	  
+	  <!--Left Column-->
+	  
 		<div>
 			<h1>Macman</h1>
 		</div>
-		
-		<div id="pacman"></div>
-
+	
 		<div>
 			<h2>Instructions</h2>
 			<p>Eat all of the pellets while avoiding the monsters! Eat fruit and powerups for extra points.</p>
@@ -37,11 +37,17 @@
 		<span style="color:black; background-color: #F9966B; border:2px solid; padding:2px;">
 		<a href="develop/index.html"><span>Developer Page</span></a></span>	
 		
+		<!--Center Column-->
+		
+		<div id="pacman"></div>
+		
+		<!--Right Column-->
+		
 		<div>
-			<span id="image"><img src="images\mac.png"/></span>
+			<span id="logo"><img src="images\mac.png"/></span>
 		</div>
 		
-		<div id="high">
+		<div id="table">
 		  <h1 id = "title">Macman High Score</h1>
 		  <table id="keywords" cellspacing="0" cellpadding="0">
 			<thead>
@@ -74,8 +80,9 @@
 			</tbody>
 		  </table>
 		</div> 	
-		
+	
 		<script>
+		
 		var el = document.getElementById("pacman");
 
 		if (Modernizr.canvas && Modernizr.localstorage && 

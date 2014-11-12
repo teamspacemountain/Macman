@@ -1,99 +1,102 @@
-	  @font-face {
-	    font-family: 'BDCartoonShoutRegular';
-        src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
-	    font-weight: normal;
-	    font-style: normal;
-      }
-	  
-      #pacman {
-        height:450px;
-        width:342px;
-        float: left;
-		position: absolute;
-		left: 400px;
-		top: 0px;
-      }
-	  
-	  #image {
-	    position: absolute;
-		left:1040px;
-		top:20px;
-	  }
-	  
-	  h1 { 
-		  font-family: BDCartoonShoutRegular; 
-		  text-align:center;
-		  color: #F9966B;
-	  }
-	  
-	  h2 {  
-		  text-align:left;
-		  color: #F9966B;
-	  }
-	  
-      body { 
-		  width:342px; 
-		  margin:0px auto; 
-		  font-family:sans-serif; 
-		  float:left; 
-		  margin-left: 50px
-	  } 
-	  @import url('http://fonts.googleapis.com/css?family=Amarante');
+	@font-face {
+	font-family: 'BDCartoonShoutRegular';
+	src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+	
+	h1 { 
+	font-family: BDCartoonShoutRegular; 
+	text-align:center;
+	color: #F9966B;
+	}
 
-	  #high{
-	  vertical-align: baseline;
-	  outline: none;
-	  -webkit-font-smoothing: antialiased;
-	  -webkit-text-size-adjust: 100%;
-	  -ms-text-size-adjust: 100%;
-	  -webkit-box-sizing: border-box;
-	  -moz-box-sizing: border-box;
-	  box-sizing: border-box;
-	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	  font-size: 62.5%;
-	  line-height: 1;
-	  padding: 22px 10px;
-	  padding-bottom: 55px;
-	  position: absolute;
-	  left: 925px;
-	  top: 150px;
+	h2 {  
+	text-align:left;
+	color: #F9966B;
+	}
+	
+	p {
+	font-size: 1.2em;
+	}
+
+	body { 
+	width:342px; 
+	margin:0px auto; 
+	font-family:sans-serif; 
+	float:left; 
+	margin-left: 50px
+	}
+
+	#pacman {
+	height:450px;
+	width:342px;
+	float: left;
+	position: absolute;
+	left: 400px;
+	top: 0px;
+	}
+
+	#logo {
+	position: absolute;
+	left:1040px;
+	top:20px;
+	}
+
+	/* High Score Table */
+
+	#table{
+	vertical-align: baseline;
+	outline: none;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 62.5%;
+	line-height: 1;
+	padding: 22px 10px;
+	padding-bottom: 55px;
+	position: absolute;
+	left: 925px;
+	top: 150px;
 	}
 
 	#title { 
-	  font-family: BDCartoonShoutRegular; 
-	  color: #F9966B;
-	  font-weight: bold;
-	  font-size: 3em;
-	  line-height: 1.7em;
-	  margin-bottom: 10px;
-	  text-align: center;
+	font-family: BDCartoonShoutRegular; 
+	color: #F9966B;
+	font-weight: bold;
+	font-size: 3em;
+	line-height: 1.7em;
+	margin-bottom: 10px;
+	text-align: center;
 	}
 
 	#keywords {
-	  margin: 0 auto;
-	  font-size: 1.2em;
-	  margin-bottom: 15px;
+	margin: 0 auto;
+	font-size: 2em;
+	margin-bottom: 15px;
 	}
 
 	#keywords thead {
-	  cursor: pointer;
-	  background: #c9dff0;
+	background: #c9dff0;
 	}
+
 	#keywords thead tr th { 
-	  font-weight: bold;
-	  padding: 12px 30px;
-	  padding-left: 42px;
+	font-weight: bold;
+	padding: 12px 30px;
+	padding-left: 42px;
 	}
+
 	#keywords thead tr th span { 
-	  padding-right: 20px;
-	  background-repeat: no-repeat;
-	  background-position: 100% 100%;
+	padding-right: 20px;
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
 	}
 
 	#keywords tbody tr td {
-	  text-align: center;
-	  padding: 15px 10px;
+	text-align: center;
+	padding: 15px 10px;
 	}
 	#keywords tbody tr td.lalign {
-	  text-align: left;
+	text-align: left;
 	}
+
