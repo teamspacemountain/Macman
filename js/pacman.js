@@ -8,7 +8,7 @@
  * do proper ghost mechanics (blinky/wimpy etc)
  */
 // milk
-var NONE        = 4, //comment to test
+var NONE        = 4, //comment to test.  trying to push to master
     UP          = 3,
     LEFT        = 2,
     DOWN        = 1,
