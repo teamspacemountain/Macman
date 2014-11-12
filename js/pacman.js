@@ -160,7 +160,7 @@ Pacman.Ghost = function (game, map, colour) {
         var high = game.getTick() % 10 > 5 ? 3  : -3;
         var low  = game.getTick() % 10 > 5 ? -3 : 3;
 
-        ctx.fillStyle = getColour();
+        ctx.fillStyle = getColour(); //color of the ghosts
         ctx.beginPath();
 
         ctx.moveTo(left, base);
@@ -322,7 +322,7 @@ Pacman.User = function (game, map) {
     };
     
     function resetPosition() {
-        position = {"x": 90, "y": 120};
+        position = {"x": 90, "y": 120}; //sets initial position of pacman
         direction = LEFT;
         due = LEFT;
     };
