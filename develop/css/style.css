@@ -78,3 +78,15 @@
 	  left: -1000px;
 	}
 	
+	.willard:hover {
+		  content: url('../images/blue.jpg');
+	}
+	
+	.dan:hover {
+		  content: url('../images/red.jpg');
+	}
+	
+	.naden:hover {
+		  content: url('../images/pink.jpg');
+	}
+	
