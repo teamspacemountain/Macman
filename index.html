@@ -1,76 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Macman</title>
-    <style type="text/css">
-      @font-face {
-	    font-family: 'BDCartoonShoutRegular';
-        src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
-	    font-weight: normal;
-	    font-style: normal;
-      }
-      #pacman {
-        height:450px;
-        width:342px;
-        /*margin:20px auto;*/
-        float: left;
-      }
-      #shim { 
-        font-family: BDCartoonShoutRegular; 
-        position:absolute;
-        visibility:hidden
-      }
-      h1 { font-family: BDCartoonShoutRegular; text-align:center; }
-      body { width:342px; margin:0px auto; font-family:sans-serif; float:left; margin-left: 50px} 
-      a { text-decoration:none; }
-    </style>
-</head>
+	<html>
+	  <head>
+		<meta charset="utf-8" />
+		<title>Macman</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="js/pacman.js"></script>
+	    <script src="js/modernizr-1.5.min.js"></script>
+		
+	</head>
 
-<body bgcolor="#6495ED">
- 
-  <div>
-    <div>
-      <article>
-        <h1><a href="#">Blog Post Title</a></h1>
-        <div>
-          <div>
-              <div id="pacman"></div>
-          </div>
-        </div>
-      </article>
-    </div>
-
-      <div>
-        <h2>Instructions</h2>
-        <p>Eat all of the pellets while avoiding the monsters! Eat fruit and powerups for extra points.</p>
-      </div>
-	  
+	<body bgcolor="#6495ED">
 	  <div>
-        <h3>Controls</h3>
-        <p>Utilize the arrow keys to move the Macman character.</p>
-      </div>
+		<div>
+			<h1>Macman</h1>
+		</div>
+		
+		<div id="pacman"></div>
+
+		<div>
+			<h2>Instructions</h2>
+			<p>Eat all of the pellets while avoiding the monsters! Eat fruit and powerups for extra points.</p>
+		</div>
 	  
-	  <span style="color:black; background-color:red; border:2px dashed; padding:2px;">
-	  <a href="develop/develop.html"><strong>Developer Page</strong></a></span>
+		<div>
+			<h2>Controls</h2>
+			<p>Utilize the arrow keys to move the Macman character.</p>
+		</div>
+		
+		<div>
+			<h2>About Macman</h2>
+			<p>The Macman game was inspired by the classic Pacman arcade game and includes a Macalester College theme. The game was
+			developed by three Macalester College students for their Internet Computing class project. More information about the 
+			developers can be found by clicking the link below:</p>
+		</div>
+		
+		<span style="color:black; background-color: #F9966B; border:2px solid; padding:2px;">
+		<a href="develop/index.html"><span>Developer Page</span></a></span>	
+		
+		<div>
+			<span id="image"><img src="images\mac.png"/></span>
+		</div>
+		
+		<script>
+		var el = document.getElementById("pacman");
 
-  </div>
-  
-  <script src="pacman.js"></script>
-  <script src="modernizr-1.5.min.js"></script>
-    
-	<script>
-
-    var el = document.getElementById("pacman");
-
-    if (Modernizr.canvas && Modernizr.localstorage && 
-        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-      window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
-    } else { 
-      el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
-        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-    }
-  </script>
-	
-</body>
-</html>
+		if (Modernizr.canvas && Modernizr.localstorage && 
+			Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+		  window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+		} else { 
+		  el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+			"(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+		}
+	    </script>
+	  </div>	
+	</body>
+	</html>

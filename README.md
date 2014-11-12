@@ -1,4 +1,0 @@
-Macman
-======
-
-That Young Macman
