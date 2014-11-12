@@ -16,7 +16,7 @@
 	  
 	  #image {
 	    position: absolute;
-		left:1100px;
+		left:1040px;
 		top:20px;
 	  }
 	  
@@ -38,3 +38,62 @@
 		  float:left; 
 		  margin-left: 50px
 	  } 
+	  @import url('http://fonts.googleapis.com/css?family=Amarante');
+
+	  #high{
+	  vertical-align: baseline;
+	  outline: none;
+	  -webkit-font-smoothing: antialiased;
+	  -webkit-text-size-adjust: 100%;
+	  -ms-text-size-adjust: 100%;
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  font-size: 62.5%;
+	  line-height: 1;
+	  padding: 22px 10px;
+	  padding-bottom: 55px;
+	  position: absolute;
+	  left: 925px;
+	  top: 150px;
+	}
+
+	#title { 
+	  font-family: BDCartoonShoutRegular; 
+	  color: #F9966B;
+	  font-weight: bold;
+	  font-size: 3em;
+	  line-height: 1.7em;
+	  margin-bottom: 10px;
+	  text-align: center;
+	}
+
+	#keywords {
+	  margin: 0 auto;
+	  font-size: 1.2em;
+	  margin-bottom: 15px;
+	}
+
+	#keywords thead {
+	  cursor: pointer;
+	  background: #c9dff0;
+	}
+	#keywords thead tr th { 
+	  font-weight: bold;
+	  padding: 12px 30px;
+	  padding-left: 42px;
+	}
+	#keywords thead tr th span { 
+	  padding-right: 20px;
+	  background-repeat: no-repeat;
+	  background-position: 100% 100%;
+	}
+
+	#keywords tbody tr td {
+	  text-align: center;
+	  padding: 15px 10px;
+	}
+	#keywords tbody tr td.lalign {
+	  text-align: left;
+	}

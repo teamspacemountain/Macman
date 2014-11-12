@@ -11,10 +11,9 @@
 		text-decoration: underline;
 	}
 	
-		a:hover
-		{
-			color: red;
-		}	
+	a:hover{
+		color: red;
+	}	
 
 	h1{
 		font-weight: 300;
