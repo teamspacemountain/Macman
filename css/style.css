@@ -100,3 +100,7 @@
 	text-align: left;
 	}
 
+	img.hidden {
+    visibility: hidden;
+	}
+
