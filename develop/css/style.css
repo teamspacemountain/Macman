@@ -1,139 +1,80 @@
-@charset 'UTF-8';
 
-	*
-	{
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
-	body
-	{
+	body{
 		font-family: 'Open Sans', sans-serif;
 		line-height: 1.85em;
-		color: #888;
 		font-weight: 300;
+		font-size: 13pt;
 	}
 
-	a
-	{
-		color: #3B95C6;
+	a{
+		color: blue;
 		text-decoration: underline;
-		-moz-transition: color .2s ease-in-out;
-		-webkit-transition: color .2s ease-in-out;
-		-o-transition: color .2s ease-in-out;
-		-ms-transition: color .2s ease-in-out;
-		transition: color .2s ease-in-out;
 	}
 	
 		a:hover
 		{
-			color: #1B75A6 !important;
-		}
+			color: red;
+		}	
 
-		a img
-		{
-			border: 0;
-		}
-
-	strong
-	{
-		font-weight: 600;
-		color: #3e3e3e;
-	}
-	
-	h1
-	{
-		color: #3e3e3e;
-	}
-	
-		h1 a
-		{
-			text-decoration: none;
-			color: inherit;
-		}
-	
-	h1
-	{
+	h1{
 		font-weight: 300;
+	    font-size: 3em;
+		letter-spacing: -0.025em;
+		margin: 0 0 0.75em 0;
 	}
 	
-		h1 strong
-		{
-			font-weight: 700;
-		}
-		
-	p
-	{
-		margin-bottom: 2em;
+	strong{
+		font-weight: 600;
 	}
 	
-	article
-	{
-		margin-bottom: 3em;
-	}
-	
-	article > :last-child
-	{
-		margin-bottom: 0;
-	}
-	
-	article:last-child
-	{
-		margin-bottom: 0;
-	}
-
-	.image
-	{
+	.image{
 		display: inline-block;
+		width: 100%;
+		margin: 0 0 3em 0;
 	}
 	
-		.image img
-		{
+		.image img{
 			display: block;
 			width: 100%;
 		}
 
-	.image-full
-	{
-		display: block;
-		width: 100%;
-		margin: 0 0 2em 0;
-	}
-		
-	.wrapper-first
-	{
+	.wrapper{
 		box-shadow: none;
+		padding-top: 3em;
 	}
 
-	.wrapper-style1
-	{
-		background-image: none;
-		background-color: #fff;
-	}
-	
-		.wrapper-style4 h1, 
-		{
-			color: #fff;
-		}
-
-	#top
-	{
+	#top{
+		text-align: left;
+		-webkit-columns: 100px 3;
 	}
 
-		#top .me
-		{
-			border-radius: 50%;
+		#top .me{
+			border-radius: 100%;
 			overflow: hidden;
+			width: 18em;
+			height: 18em;
 		}
 
-		#top p
-		{
+		#top p{
+			font-size: 1em;
+			line-height: 1.75em;
 		}
+
+	#title{
+	  position: relative;
+	  top: 50px;
+	  left: 270px;
+	}
 	
-			#top p a
-			{
-				color: inherit;
-			}
+	#center{
+	  position: absolute;
+	  top: 50px;
+	  left: 1100px;
+	}
+	
+	#foot{
+	  position: absolute;
+	  top: 700px;
+	  left: -1000px;
+	}
+	

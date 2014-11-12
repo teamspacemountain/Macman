@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title>Macman</title>
-    	<li class="macman"><a href="develop/develop.html"><span>Developer Page</span></a></li>
     <style type="text/css">
       @font-face {
 	    font-family: 'BDCartoonShoutRegular';
@@ -26,17 +25,41 @@
       body { width:342px; margin:0px auto; font-family:sans-serif; float:left; margin-left: 50px} 
       a { text-decoration:none; }
     </style>
-
 </head>
 
-<body>
+<body bgcolor="#6495ED">
+ 
+  <div>
+    <div>
+      <article>
+        <h1><a href="#">Blog Post Title</a></h1>
+        <div>
+          <div>
+              <div id="pacman"></div>
+          </div>
+        </div>
+      </article>
+    </div>
 
+      <div>
+        <h2>Instructions</h2>
+        <p>Eat all of the pellets while avoiding the monsters! Eat fruit and powerups for extra points.</p>
+      </div>
+	  
+	  <div>
+        <h3>Controls</h3>
+        <p>Utilize the arrow keys to move the Macman character.</p>
+      </div>
+	  
+	  <span style="color:black; background-color:red; border:2px dashed; padding:2px;">
+	  <a href="develop/develop.html"><strong>Developer Page</strong></a></span>
 
-  <div id="pacman"></div>
+  </div>
+  
   <script src="pacman.js"></script>
   <script src="modernizr-1.5.min.js"></script>
-
-  <script>
+    
+	<script>
 
     var el = document.getElementById("pacman");
 
@@ -48,6 +71,6 @@
         "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
     }
   </script>
-
+	
 </body>
 </html>
