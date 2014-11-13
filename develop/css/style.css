@@ -1,91 +1,91 @@
 
 	body{
-		font-family: 'Open Sans', sans-serif;
-		line-height: 1.85em;
-		font-weight: 300;
-		font-size: 13pt;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.85em;
+	font-weight: 300;
+	font-size: 13pt;
 	}
 
 	a{
-		color: blue;
-		text-decoration: underline;
+	color: blue;
+	text-decoration: underline;
 	}
-	
+
 	a:hover{
-		color: red;
+	color: red;
 	}	
 
 	h1{
-		font-weight: 300;
-	    font-size: 3em;
-		letter-spacing: -0.025em;
-		margin: 0 0 0.75em 0;
+	font-weight: 300;
+	font-size: 3em;
+	letter-spacing: -0.025em;
+	margin: 0 0 0.75em 0;
 	}
-	
+
 	strong{
-		font-weight: 600;
+	font-weight: 600;
 	}
-	
+
 	.image{
-		display: inline-block;
-		width: 100%;
-		margin: 0 0 3em 0;
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 3em 0;
 	}
-	
-		.image img{
-			display: block;
-			width: 100%;
-		}
+
+	.image img{
+	display: block;
+	width: 100%;
+	}
 
 	.wrapper{
-		box-shadow: none;
-		padding-top: 3em;
+	box-shadow: none;
+	padding-top: 3em;
 	}
 
 	#top{
-		text-align: left;
-		-webkit-columns: 100px 3;
+	text-align: left;
+	-webkit-columns: 100px 3;
 	}
 
-		#top .me{
-			border-radius: 100%;
-			overflow: hidden;
-			width: 18em;
-			height: 18em;
-		}
+	#top .me{
+	border-radius: 100%;
+	overflow: hidden;
+	width: 18em;
+	height: 18em;
+	}
 
-		#top p{
-			font-size: 1em;
-			line-height: 1.75em;
-		}
+	#top p{
+	font-size: 1em;
+	line-height: 1.75em;
+	}
 
 	#title{
-	  position: relative;
-	  top: 50px;
-	  left: 270px;
+	position: relative;
+	top: 50px;
+	left: 270px;
+	}
+
+	#center {
+	position: absolute;
+	top: 50px;
+	left: 1100px;
 	}
 	
-	#center{
-	  position: absolute;
-	  top: 50px;
-	  left: 1100px;
+	#foot {
+	position: absolute;
+	top: 750px;
+	left: 50px;
 	}
-	
-	#foot{
-	  position: absolute;
-	  top: 700px;
-	  left: -1000px;
-	}
-	
+
 	.willard:hover {
-		  content: url('../images/blue.jpg');
+	content: url('../images/blue.jpg');
 	}
-	
+
 	.dan:hover {
-		  content: url('../images/red.jpg');
+	content: url('../images/red.jpg');
 	}
-	
+
 	.naden:hover {
-		  content: url('../images/pink.jpg');
+	content: url('../images/pink.jpg');
 	}
-	
+
