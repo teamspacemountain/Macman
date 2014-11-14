@@ -811,10 +811,10 @@ var PACMAN = (function () {
     
     function dialog(text) {
         ctx.fillStyle = "#FFFF00";
-        ctx.font      = "14px BDCartoonShoutRegular";
+        ctx.font      = "11px BDCartoonShoutRegular";
         var width = ctx.measureText(text).width,
-            x     = ((map.width * map.blockSize) - width) / 2;        
-        ctx.fillText(text, x, (map.height * 10) + 8);
+            x     = ((map.width * map.blockSize) - width) / 2;
+        ctx.fillText(text, x, (map.height * 10) + 12);
     }
 
     function soundDisabled() {
@@ -921,7 +921,7 @@ var PACMAN = (function () {
     function mainDraw() { 
 
         var diff, u, i, len, nScore;
-        
+
         ghostPos = [];
 
         for (i = 0, len = ghosts.length; i < len; i += 1) {
@@ -962,10 +962,172 @@ var PACMAN = (function () {
     };
 
     function mainLoop() {
+        //IMAGES
+      var im_left = new Image();
+      im_left.src = './images/rightline.png';
+      im_left.onload = function() {
+         ctx.drawImage(im_left, -5, 0);
+      };
+        var im_bot = new Image();
+        im_bot.src = './images/bot.png';
+        im_bot.onload = function() {
+            ctx.drawImage(im_bot, 0, 567);
+        };
+        var im_right = new Image();
+        im_right.src = './images/rightline.png';
+        im_right.onload = function() {
+            ctx.drawImage(im_right, 505, 0);
+        };
+        var im_hright = new Image();
+        im_hright.src = './images/halfright.png';
+        im_hright.onload = function() {
+            ctx.drawImage(im_hright, 486, 0);
+            ctx.drawImage(im_hright, 486, 303);
+        };
+      var im_top = new Image();
+        im_top.src = './images/topline.png';
+        im_top.onload = function() {
+            ctx.drawImage(im_top, 0, 0);
+        };
+        var im_cc = new Image();
+        im_cc.src = './images/cc.png';
+        im_cc.onload = function() {
+            ctx.drawImage(im_cc, 7,189);
+        };
+        var im_chap = new Image();
+        im_chap.src = './images/chap.png';
+        im_chap.onload = function() {
+            ctx.drawImage(im_chap,54,54);
+            ctx.drawImage(im_chap,405,54);
+        }
+        var im_lib = new Image();
+        im_lib.src = './images/lib.png';
+        im_lib.onload = function() {
+            ctx.drawImage(im_lib, 0,297);
+        };
+        var im_foot = new Image();
+        im_foot.src = './images/foot.png';
+        im_foot.onload = function() {
+            ctx.drawImage(im_foot, 405,189);
+        };
+      var im_leon = new Image();
+        im_leon.src = './images/leonard.png';
+        im_leon.onload = function() {
+            ctx.drawImage(im_leon, 405, 297);
+        };
+        //54 405 135
+        var im_toprect = new Image();
+        im_toprect.src = './images/toprect.png';
+        im_toprect.onload = function() {
+            ctx.drawImage(im_toprect, 405, 135);
+            ctx.drawImage(im_toprect, 54, 135);
+        };
+        var im_weyer = new Image();
+        im_weyer.src = './images/weyer.png';
+        im_weyer.onload = function() {
+            ctx.drawImage(im_weyer, 297, 54);
+            ctx.drawImage(im_weyer, 135, 54);
+        };
 
+        var im_topl = new Image();
+        im_topl.src = './images/toplong.png';
+        im_topl.onload = function() {
+            ctx.drawImage(im_topl, 189,135);
+            ctx.drawImage(im_topl, 189,351);
+            ctx.drawImage(im_topl, 189,459);
+
+        };
+        //189 243 135 81
+        var im_kirk = new Image();
+        im_kirk.src = './images/kirk.png';
+        im_kirk.onload = function() {
+            ctx.drawImage(im_kirk, 189,243);
+
+        };
+        //135 135
+        var im_v3 = new Image();
+        im_v3.src = './images/vertbush.png';
+        im_v3.onload = function() {
+            ctx.drawImage(im_v3, 135,135);
+            ctx.drawImage(im_v3, 351,135);
+
+        };
+        var im_v4 = new Image();
+        im_v4.src = './images/vertbush4.png';
+        im_v4.onload = function() {
+            ctx.drawImage(im_v4, 54,513);
+            ctx.drawImage(im_v4, 297,513);
+
+        };
+        var im_h2 = new Image();
+        im_h2.src = './images/hbush2.png';
+        im_h2.onload = function() {
+            ctx.drawImage(im_h2, 135,459);
+            ctx.drawImage(im_h2, 351,459);
+
+        };
+        var im_vgrass = new Image();
+        im_vgrass.src = './images/vgrass3.png';
+        im_vgrass.onload = function() {
+            ctx.drawImage(im_vgrass, 81,405);
+            ctx.drawImage(im_vgrass, 405,405);
+
+        };
+        var im_hl = new Image();
+        im_hl.src = './images/hbushl.png';
+        im_hl.onload = function() {
+            ctx.drawImage(im_hl, 135,189);
+        };
+        var im_hr = new Image();
+        im_hr.src = './images/hbushr.png';
+        im_hr.onload = function() {
+            ctx.drawImage(im_hr, 297,189);
+        };
+
+        var im_dupl = new Image();
+        im_dupl.src = './images/duprel.png';
+        im_dupl.onload = function() {
+            ctx.drawImage(im_dupl, 135,405);
+        };
+        var im_dupr = new Image();
+        im_dupr.src = './images/duprer.png';
+        im_dupr.onload = function() {
+            ctx.drawImage(im_dupr, 297,405);
+        };
+        var im_tree = new Image();
+        im_tree.src = './images/tree.png';
+        im_tree.onload = function() {
+            ctx.drawImage(im_tree, 54,405);
+            ctx.drawImage(im_tree, 432,405);
+            ctx.drawImage(im_tree, 27,459);
+            ctx.drawImage(im_tree, 459,459);
+
+
+        };
+
+        var im_bell = new Image();
+        im_bell.src = './images/bell.png';
+        im_bell.onload = function() {
+            ctx.drawImage(im_bell,243,28);
+            ctx.drawImage(im_bell,135,297);
+            ctx.drawImage(im_bell,351,297);
+
+        };
+
+
+
+        var im_v1 = new Image();
+        im_v1.src = './images/vertrect1.png';
+        im_v1.onload = function() {
+            ctx.drawImage(im_v1, 243,378);
+            ctx.drawImage(im_v1, 243,486);
+            ctx.drawImage(im_v1, 243,162);
+
+
+        };
         var diff;
 
-        if (state !== PAUSE) { 
+        if (state !== PAUSE) {
             ++tick;
         }
 
@@ -976,7 +1138,7 @@ var PACMAN = (function () {
         } else if (state === WAITING && stateChanged) {            
             stateChanged = false;
             map.draw(ctx);
-            dialog("Press N to start a New game");            
+            dialog("Press N to start a game");
         } else if (state === EATEN_PAUSE && 
                    (tick - timerStart) > (Pacman.FPS / 3)) {
             map.draw(ctx);
