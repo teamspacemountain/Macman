@@ -512,7 +512,7 @@ Pacman.User = function (game, map) {
         ctx.fill();   
 
         var img = document.getElementById("scotHead");
-        ctx.drawImage(img,10,10,28,28);   //(x,y,width,height)
+      //  ctx.drawImage(img,10,10,28,28);   //(x,y,width,height)
 
     
     };
