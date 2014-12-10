@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/teamspacemountain/Macman",
   "dependencies": {
-    "express": "^4.10.4"
+    "body-parser": "^1.9.2",
+    "express": "^4.10.4",
+    "jade": "^1.7.0",
+    "mongoskin": "^1.4.4",
+    "morgan": "^1.5.0",
+    "socket.io": "^1.2.0"
   }
 }

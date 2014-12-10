@@ -1,6 +1,11 @@
 var express = require('express')
 var app = express()
 var path = require('path');
+var bodyParser = require('body-parser');
+
+// Tell Express that we also want to parse json bodies from put or post requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static(path.join(__dirname, 'public')));
 
