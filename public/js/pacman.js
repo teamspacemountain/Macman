@@ -874,7 +874,9 @@ var PACMAN = (function () {
         else{
             console.log("died");
             console.log(user.theScore());
-            //here is where we send the high score to the server?
+            alert("you died you suck!");
+            var url = 'http://localhost:8080/';
+            var scoreData = { 'name' : 'default', 'score' : 0 };
         }
     }
 
