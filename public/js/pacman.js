@@ -874,34 +874,35 @@ var PACMAN = (function () {
         else{
             console.log("died");
             console.log(user.theScore());
-            alert("you died you suck!");
+            //alert("you died you suck!");
             var query = 'http://localhost:8080/gameover';
             var scoreData = { 'score' : user.theScore() };
-            // $.ajax({
-            //     // the URL for the request
-            //     url: query,
-            //     type: "PUT",
-            //     cache: false,
-            //     contentType: 'application/json',
-            //     dataType : "json",
-            //     data: JSON.stringify({image: drawingData}),
+            $.ajax({
+                // the URL for the request
+                url: query,
+                type: "PUT",
+                cache: false,
+                contentType: 'application/json',
+                dataType : "json",
+                data: JSON.stringify({score: scoreData}),
          
-            //     // code to run if the request succeeds;
-            //     // the response is passed to the function
-            //     success: function( json ) {
-            //         alert("Drawing Saved to MongoDB");
-            //     },
+                // code to run if the request succeeds;
+                // the response is passed to the function
+                success: function( json ) {
+                    console.log(json);
+                    alert("Something happened on server side?");
+                },
          
-            //     // code to run if the request fails; the raw request and
-            //     // status codes are passed to the function
-            //     error: function( xhr, status, errorThrown ) {
-            //         alert( "Sorry, there was a problem!" );
-            //         console.log( "Error: " + errorThrown );
-            //         console.log( "Status: " + status );
-            //         console.dir( xhr );
-            //         console.log(xhr.statusText);
-            //     }
-            // });
+                // code to run if the request fails; the raw request and
+                // status codes are passed to the function
+                error: function( xhr, status, errorThrown ) {
+                    alert( "Sorry, there was a problem!" );
+                    console.log( "Error: " + errorThrown );
+                    console.log( "Status: " + status );
+                    console.dir( xhr );
+                    console.log(xhr.statusText);
+                }
+            });
         }
     }
 

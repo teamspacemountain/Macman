@@ -19,6 +19,17 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, '../public', 'index.html'))
 })
 
+// Handle the put http verb for when we want to save
+app.put('/gameover', function(req, res) {
+	var scoreData = req.body.score;
+	console.log("put request for /gameover handled");
+	res.send("hello?");
+	// req.collections.images.insert(drawingData, function(error, response){
+	// 	if (error) throw error;
+	// 	res.send(response);
+	// })
+})
+
 var server = app.listen(8080, function () {
 
   var host = server.address().address
