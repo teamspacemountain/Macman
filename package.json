@@ -1,0 +1,22 @@
+{
+  "name": "Macman",
+  "version": "1.0.0",
+  "description": "Macman game for COMP 346",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teamspacemountain/Macman.git"
+  },
+  "author": "Sam Naden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teamspacemountain/Macman/issues"
+  },
+  "homepage": "https://github.com/teamspacemountain/Macman",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
