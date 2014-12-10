@@ -81,7 +81,7 @@ Pacman.Ghost = function (game, map, colour) {
         position = {"x": 90, "y": 80};
         direction = getRandomDirection();
         due = getRandomDirection();
-        console.log("RESET");
+        //console.log("RESET");
     };
     
     function onWholeSquare(x) {
@@ -874,6 +874,7 @@ var PACMAN = (function () {
         else{
             console.log("died");
             console.log(user.theScore());
+            //here is where we send the high score to the server?
         }
     }
 
