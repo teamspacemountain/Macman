@@ -7,7 +7,7 @@
  * fix what happens when a ghost is eaten (should go back to base)
  * do proper ghost mechanics (blinky/wimpy etc)
  */
-// milk
+// testing commit to new branch "sam"
 var NONE        = 4, //comment to test.  trying to push to master
     UP          = 3,
     LEFT        = 2,
