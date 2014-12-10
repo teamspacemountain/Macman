@@ -75,12 +75,13 @@ Pacman.Ghost = function (game, map, colour) {
         return moves[Math.floor(Math.random() * 2)];
     };
     
-    function reset() {
+    function reset() {  //happens after each life is lost
         eaten = null;
         eatable = null;
         position = {"x": 90, "y": 80};
         direction = getRandomDirection();
         due = getRandomDirection();
+        console.log("RESET");
     };
     
     function onWholeSquare(x) {
@@ -369,6 +370,7 @@ Pacman.User = function (game, map) {
     };
 
     function next(pos, dir) {
+
         return {
             "y" : pointToCoord(nextSquare(pos.y, dir)),
             "x" : pointToCoord(nextSquare(pos.x, dir)),
@@ -387,6 +389,7 @@ Pacman.User = function (game, map) {
     };
 
     function move(ctx) {
+
         
         var npos        = null, 
             nextWhole   = null, 
@@ -868,6 +871,10 @@ var PACMAN = (function () {
         if (user.getLives() > 0) {
             startLevel();
         }
+        else{
+            console.log("died");
+            console.log(user.theScore());
+        }
     }
 
     function setState(nState) { 
@@ -910,6 +917,7 @@ var PACMAN = (function () {
         ctx.fillStyle = "#FFFF00";
         ctx.font      = "14px BDCartoonShoutRegular";
         ctx.fillText("Score: " + user.theScore(), 30, textBase);
+        //console.log(user.theScore()); //Logging the score
         ctx.fillText("Level: " + level, 260, textBase);
     }
 
