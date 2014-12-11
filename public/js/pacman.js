@@ -901,8 +901,10 @@ var PACMAN = (function () {
         else{
             console.log("died");
             console.log(user.theScore());
+            var userName = window.prompt("Enter your name in case you got a high score!","name");
+            console.log(userName);
             var query = "http://localhost:8080/gameover";
-            var scoreData = { 'score' : user.theScore() };
+            var scoreData = { 'name':userName, 'score' : user.theScore() };
             $.ajax({
                 // the URL for the request
                 url: query,
@@ -915,32 +917,18 @@ var PACMAN = (function () {
                 // code to run if the request succeeds;
                 // the response is passed to the function
                 success: function( json ) {
-                    //console.log(json);
-                    var isHighScore = json.highScore;
-                    var position = json.index;
-                    if(!isHighScore){
-                        alert("Sorry do better next time.");
-                    }
-                    else if(isHighScore){
-                        alert("dude nice");
-                        var userName = window.prompt("You got a high score!  Enter your name for eternal glory.","name");
-                        console.log(userName);
-                        console.log(position);
-                        if(position==0){
-                            console.log("made it");
-                            $("#name5").html(userName);
-                            $("#score5").html(user.theScore());
-                        }
+                    console.log(json.name1);
+                    $("#name1").html(json.name1);
+                    $("#name2").html(json.name2);
+                    $("#name3").html(json.name3);
+                    $("#name4").html(json.name4);
+                    $("#name5").html(json.name5);
 
-                        else if(position==1){
-                            
-                            $("#name5").html($("name4").html());
-                            $("#score5").html($("score4").html());
-                            $("#name4").html(userName);
-                            $("#score4").html(user.theScore());
-                        }
-
-                    }
+                    $("#score1").html(json.score1);
+                    $("#score2").html(json.score2);
+                    $("#score3").html(json.score3);
+                    $("#score4").html(json.score4);
+                    $("#score5").html(json.score5);
                 },
          
                 // code to run if the request fails; the raw request and
