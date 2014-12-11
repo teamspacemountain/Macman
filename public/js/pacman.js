@@ -313,7 +313,7 @@ Pacman.User = function (game, map) {
 
     function initUser() {
         score = 0;
-        lives = 3;
+        lives = 1;
         newLevel();
     }
     
@@ -598,7 +598,10 @@ Pacman.Map = function (size) {
     }
     
     function reset() {       
-        map    = Pacman.MAP.clone();
+        //map    = Pacman.MAP.clone();
+        //map = $.extend(true, {}, Pacman.MAP);
+        map = Pacman.MAP.slice(0);
+
         height = map.length;
         width  = (map[0].length);        
     };
@@ -875,13 +878,13 @@ var PACMAN = (function () {
             console.log("died");
             console.log(user.theScore());
             //alert("you died you suck!");
-            var query = 'http://localhost:8080/gameover';
-            var scoreData = { 'score' : user.theScore() };
+            var query = "http://localhost:8080/gameover";
+            var scoreData = { 'score' : 0 };
             $.ajax({
                 // the URL for the request
                 url: query,
-                type: "PUT",
-                cache: false,
+                type: "POST",
+                //cache: false,
                 contentType: 'application/json',
                 dataType : "json",
                 data: JSON.stringify({score: scoreData}),
@@ -889,7 +892,7 @@ var PACMAN = (function () {
                 // code to run if the request succeeds;
                 // the response is passed to the function
                 success: function( json ) {
-                    console.log(json);
+                    //console.log(json);
                     alert("Something happened on server side?");
                 },
          
@@ -1465,17 +1468,17 @@ Pacman.WALLS = [
      {"line": [10.5, 9.5]}]
 ];
 
-Object.prototype.clone = function () {
-    var i, newObj = (this instanceof Array) ? [] : {};
-    for (i in this) {
-        if (i === 'clone') {
-            continue;
-        }
-        if (this[i] && typeof this[i] === "object") {
-            newObj[i] = this[i].clone();
-        } else {
-            newObj[i] = this[i];
-        }
-    }
-    return newObj;
-};
+// Object.prototype.clone = function () {
+//     var i, newObj = (this instanceof Array) ? [] : {};
+//     for (i in this) {
+//         if (i === 'clone') {
+//             continue;
+//         }
+//         if (this[i] && typeof this[i] === "object") {
+//             newObj[i] = this[i].clone();
+//         } else {
+//             newObj[i] = this[i];
+//         }
+//     }
+//     return newObj;
+// };
