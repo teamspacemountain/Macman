@@ -879,7 +879,7 @@ var PACMAN = (function () {
             console.log(user.theScore());
             //alert("you died you suck!");
             var query = "http://localhost:8080/gameover";
-            var scoreData = { 'score' : 0 };
+            var scoreData = { 'score' : user.theScore() };
             $.ajax({
                 // the URL for the request
                 url: query,

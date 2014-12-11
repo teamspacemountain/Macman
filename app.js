@@ -29,8 +29,9 @@ app.get('/', function (req, res) {
 
 // Handle the put http verb for when we want to save a score
 app.post('/gameover', function(req, res) {
-	//var scoreData = req.body.score;
+	var scoreData = req.body.score;
 	console.log("post request for /gameover handled");
+	console.log(scoreData.score);
 	//res.send(req);
 	// req.collections.images.insert(drawingData, function(error, response){
 	// 	if (error) throw error;
