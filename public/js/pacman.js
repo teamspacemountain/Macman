@@ -901,7 +901,6 @@ var PACMAN = (function () {
         else{
             console.log("died");
             console.log(user.theScore());
-            //alert("you died you suck!");
             var query = "http://localhost:8080/gameover";
             var scoreData = { 'score' : user.theScore() };
             $.ajax({
