@@ -30,33 +30,75 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, '../public', 'index.html'))
 })
 
+var determineRank = function(val, scores){
+  scores.sort(function(a,b){return a-b});
+  if(val<= scores[0]){
+    return([false,-1,scores]);
+  }
+  else if(val>scores[0]){
+    scores[5]= val;
+    
+    scores.sort(function(a,b){return a-b});
+    console.log(scores);
+    scores=scores.slice(1,6);
+    var index=scores.indexOf(val);
+    return([true,index,scores]);
+  }
+}
+
+
+
 // Handle the put http verb for when we want to save a score
+//ALWAYS REMEMBER TO INSERT DUMMY SCORES TO START THAT MATCH HTML PAGE
 app.post('/gameover', function(req, res) {
-	var newScores=[100,200,300,400,500];
 	var scoreData = req.body.score;
-	console.log("score data is below");
-	console.log(scoreData);
-	console.log(scoreData.score);
+  var userScore = scoreData.score;
+	// console.log("score data is below");
+	// console.log(scoreData);
+	//console.log(scoreData.score);
+
+  //first check to see if db is empty
+  // db.collection('scores').find().toArray(function(err, result) {
+  //     if (err) throw err;
+  //     console.log("logging result");
+  //     console.log(result);
+  //     console.log(result.length);
+  //     if(result.length===0){
+  //       //default scores
+  //       console.log("In IF statement");
+  //       db.collection('scores').insert({scores: [59,67,75,82,90]}, function(err, result) {
+  //         if (err) throw err;
+  //         if (result) console.log('Added!');
+  //       });
+  //     }
+  // });
+
 	db.collection('scores').find().toArray(function(err, result) {
     	if (err) throw err;
     	//result is an array
+      console.log("logging result");
     	console.log(result);
-    	console.log(result[0].scores); //this is the array of current high scores
-    	newScores = [100,200,300,400,500];
-    	// console.log("logging unsorted then sorted");
-    	// console.log(currentHighScores);
-    	// console.log(currentHighScores.sort(function(a, b){return a-b}));  //sorts array in ascending
-    	// var max_of_array = Math.max.apply(Math, currentHighScores);
-    	// console.log("logging max, then min");
-    	// console.log(max_of_array);
-    	// var min_of_array = Math.min.apply(Math, currentHighScores);
-    	// console.log(min_of_array);
+      console.log(result.length);
+      //insert default scores if database is empty
+
+    	//console.log(result[0].scores); //this is the array of current high scores
+      var currHighScores = result[0].scores;
+    	var isHighScore = determineRank(userScore, currHighScores);
+      console.log(isHighScore);
+      db.collection('scores').remove({}, function(err, result) {
+        if (!err) console.log('VR deleted!');
+      });
+      db.collection('scores').insert({scores: isHighScore[2]}, function(err, result) {
+        if (err) throw err;
+        if (result) console.log('Added!');
+      });
+
 	});
 
-	db.collection('scores').insert({scores: newScores}, function(err, result) {
-    	if (err) throw err;
-    	if (result) console.log('Added!');
-	});
+	// db.collection('scores').insert({scores: newScores}, function(err, result) {
+ //    	if (err) throw err;
+ //    	if (result) console.log('Added!');
+	// });
 })
 
 var server = app.listen(8080, function () {
