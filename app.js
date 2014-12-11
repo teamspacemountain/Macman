@@ -95,10 +95,7 @@ app.post('/gameover', function(req, res) {
 
 	});
 
-	// db.collection('scores').insert({scores: newScores}, function(err, result) {
- //    	if (err) throw err;
- //    	if (result) console.log('Added!');
-	// });
+
 })
 
 var server = app.listen(8080, function () {
