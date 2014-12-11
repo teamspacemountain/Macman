@@ -598,9 +598,33 @@ Pacman.Map = function (size) {
     }
     
     function reset() {       
-        map    = Pacman.MAP.clone();
+        //map    = Pacman.MAP.clone();
         //map = $.extend(true, {}, Pacman.MAP);
         //map = Pacman.MAP.slice(0);
+        map = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 4, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 4, 0],
+    [0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0],
+    [0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+    [2, 2, 2, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 2, 2, 2],
+    [0, 0, 0, 0, 1, 0, 1, 0, 0, 3, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+    [2, 2, 2, 2, 1, 1, 1, 0, 3, 3, 3, 0, 1, 1, 1, 2, 2, 2, 2],
+    [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+    [2, 2, 2, 0, 1, 0, 1, 1, 1, 2, 1, 1, 1, 0, 1, 0, 2, 2, 2],
+    [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0],
+    [0, 4, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 4, 0],
+    [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0],
+    [0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
 
         height = map.length;
         width  = (map[0].length);        
@@ -893,7 +917,31 @@ var PACMAN = (function () {
                 // the response is passed to the function
                 success: function( json ) {
                     //console.log(json);
-                    alert("Something happened on server side?");
+                    var isHighScore = json.highScore;
+                    var position = json.index;
+                    if(!isHighScore){
+                        alert("Sorry do better next time.");
+                    }
+                    else if(isHighScore){
+                        alert("dude nice");
+                        var userName = window.prompt("You got a high score!  Enter your name for eternal glory.","name");
+                        console.log(userName);
+                        console.log(position);
+                        if(position==0){
+                            console.log("made it");
+                            $("#name5").html(userName);
+                            $("#score5").html(user.theScore());
+                        }
+
+                        else if(position==1){
+                            
+                            $("#name5").html($("name4").html());
+                            $("#score5").html($("score4").html());
+                            $("#name4").html(userName);
+                            $("#score4").html(user.theScore());
+                        }
+
+                    }
                 },
          
                 // code to run if the request fails; the raw request and
@@ -1468,17 +1516,17 @@ Pacman.WALLS = [
      {"line": [10.5, 9.5]}]
 ];
 
-Object.prototype.clone = function () {
-    var i, newObj = (this instanceof Array) ? [] : {};
-    for (i in this) {
-        if (i === 'clone') {
-            continue;
-        }
-        if (this[i] && typeof this[i] === "object") {
-            newObj[i] = this[i].clone();
-        } else {
-            newObj[i] = this[i];
-        }
-    }
-    return newObj;
-};
+// Object.prototype.clone = function () {
+//     var i, newObj = (this instanceof Array) ? [] : {};
+//     for (i in this) {
+//         if (i === 'clone') {
+//             continue;
+//         }
+//         if (this[i] && typeof this[i] === "object") {
+//             newObj[i] = this[i].clone();
+//         } else {
+//             newObj[i] = this[i];
+//         }
+//     }
+//     return newObj;
+// };

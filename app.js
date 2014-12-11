@@ -30,6 +30,8 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, '../public', 'index.html'))
 })
 
+//used to figure out where the user's score fits into the current top scores
+//if it's not a high score it returns the old scores
 var determineRank = function(val, scores){
   scores.sort(function(a,b){return a-b});
   if(val<= scores[0]){
@@ -78,7 +80,7 @@ app.post('/gameover', function(req, res) {
     	//result is an array
       console.log("logging result");
     	console.log(result);
-      console.log(result.length);
+      
       //insert default scores if database is empty
 
     	//console.log(result[0].scores); //this is the array of current high scores
@@ -93,7 +95,13 @@ app.post('/gameover', function(req, res) {
         if (result) console.log('Added!');
       });
 
+      var returnData = {highScore: isHighScore[0], index: isHighScore[1]};
+      res.send(returnData);
+
 	});
+
+  console.log("OUT OF SCOPE?");
+
 
 
 })
