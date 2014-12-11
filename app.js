@@ -48,6 +48,21 @@ var determineRank = function(val, scores){
   }
 }
 
+app.get('/updateTable', function(req, res){
+
+  db.collection('scores').find().toArray(function(err, result){
+    var currentScores = [];
+    for(var i = 0;i<result.length;i++){
+      currentScores[i] = [result[i].name,result[i].score];
+    }
+    currentScores.sort(function(a,b){return a[1]-b[1]});
+    console.log(currentScores);
+
+    var returnData = {name1:currentScores[4][0], score1:currentScores[4][1],name2:currentScores[3][0], score2:currentScores[3][1],name3:currentScores[2][0], score3:currentScores[2][1],name4:currentScores[1][0], score4:currentScores[1][1],name5:currentScores[0][0], score5:currentScores[0][1]};
+    res.send(returnData);
+
+  })
+})
 
 
 // Handle the put http verb for when we want to save a score
@@ -136,6 +151,7 @@ app.post('/gameover', function(req, res) {
     var returnData = {name1:currentScores[4][0], score1:currentScores[4][1],name2:currentScores[3][0], score2:currentScores[3][1],name3:currentScores[2][0], score3:currentScores[2][1],name4:currentScores[1][0], score4:currentScores[1][1],name5:currentScores[0][0], score5:currentScores[0][1]};
     res.send(returnData);
   })
+
 })
 
 var server = app.listen(8080, function () {
