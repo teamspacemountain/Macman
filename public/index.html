@@ -3,9 +3,12 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>The Macman Game</title>
+		<script src="js/modernizr-1.5.min.js"></script>	
+		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<!--<script src="js/jquery-2.1.1.js"></script>-->
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<script src="js/pacman.js"></script>
-		<script src="js/modernizr-1.5.min.js"></script>	
+		<script src="js/script.js"></script>
 	</head>
 
 	<body bgcolor="#6495ED">	
@@ -32,7 +35,7 @@
 			<p>The Macman game was inspired by the classic Pacman arcade game and includes a Macalester College theme. The game was
 			developed by three Macalester College students for their Internet Computing class project. More information about the 
 			developers can be found by clicking the link below:</p>
-			<img id="scotHead" class="hidden" height="28" width="28" src="images\scot.png"/>
+			
 		</div>
 		
 		<span style="color:black; background-color: #F9966B; border:2px solid; padding:2px;">
@@ -62,24 +65,24 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td class="lalign">SAM</td>
-				<td>9,000</td>
+				<td class="lalign" id="name1">SAM</td>
+				<td id="score1">9,000</td>
 			  </tr>
 			  <tr>
-				<td class="lalign">JARED</td>
-				<td>8,200</td>
+				<td class="lalign" id="name2">JARED</td>
+				<td id="score2">8,200</td>
 			  </tr>
 			  <tr>
-				<td class="lalign">DAN</td>
-				<td>7,500</td>
+				<td class="lalign" id="name3">DAN</td>
+				<td id="score3">7,500</td>
 			  </tr>
 			  <tr>
-				<td class="lalign">BOB</td>
-				<td>6,700</td>
+				<td class="lalign" id="name4">BOB</td>
+				<td id="score4">6,700</td>
 			  </tr>
 			  <tr>
-				<td class="lalign">BILL</td>
-				<td>5,900</td>
+				<td class="lalign" id="name5">BILL</td>
+				<td id="score5">5,900</td>
 			  </tr>
 			</tbody>
 		  </table>
