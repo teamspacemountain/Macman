@@ -19,6 +19,13 @@ app.use(express.static(path.join(__dirname, 'public')));  //automatically create
 //app.use(express.json());       // to support JSON-encoded bodies
 //app.use(express.urlencoded()); // to support URL-encoded bodies
 
+//trying to enable CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 db.collection('scores').find().toArray(function(err, result){
   var currentScores = [];
@@ -58,7 +65,7 @@ db.collection('scores').find().toArray(function(err, result){
 //   //console.log("get request to /")
 // })
 
-app.get('/', function (req, res) {
+app.get('/', function (req, res, next) {
 	//res.sendFile(path.join(__dirname, '../Macman/public', 'index.html'))
 	res.sendFile(path.join(__dirname, '../public', 'index.html'))
 })
@@ -81,7 +88,7 @@ var determineRank = function(val, scores){
   }
 }
 
-app.get('/updateTable', function(req, res){
+app.get('/updateTable', function(req, res, next){
 
   db.collection('scores').find().toArray(function(err, result){
     var currentScores = [];
@@ -100,7 +107,7 @@ app.get('/updateTable', function(req, res){
 
 // Handle the put http verb for when we want to save a score
 //ALWAYS REMEMBER TO INSERT DUMMY SCORES TO START THAT MATCH HTML PAGE
-app.post('/gameover', function(req, res) {
+app.post('/gameover', function(req, res, next) {
 
 
 
