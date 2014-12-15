@@ -5,6 +5,17 @@
 	font-style: normal;
 	}
 	
+	body { 
+	width:342px; 
+	margin:0px auto; 
+	font-family:sans-serif; 
+	float:left; 
+	color:#FBF9F7;
+	margin-left: 50px
+	}
+
+	/* Left Column */
+	
 	h1 { 
 	font-family: BDCartoonShoutRegular; 
 	text-align:center;
@@ -19,15 +30,20 @@
 	p {
 	font-size: 1.2em;
 	}
-
-	body { 
-	width:342px; 
-	margin:0px auto; 
-	font-family:sans-serif; 
-	float:left; 
-	color:#FBF9F7;
-	margin-left: 50px
+	
+	#developerpage {
+	position: absolute;
+	left:60px;
+	top:600px;
 	}
+	
+	#sourcecode {
+	position: absolute;
+	left:200px;
+	top:600px;
+	}
+	
+	/* Middle Column */
 
 	#pacman {
 	height:450px;
@@ -37,6 +53,8 @@
 	left: 400px;
 	top: 0px;
 	}
+	
+	/* Right Column */
 
 	#logo {
 	position: absolute;
@@ -44,21 +62,9 @@
 	top:20px;
 	}
 	
-	#developerpage{
-	position: absolute;
-	left:60px;
-	top:625px;
-	}
-	
-	#sourcecode{
-	position: absolute;
-	left:200px;
-	top:625px;
-	}
-
 	/* High Score Table */
 
-	#table{
+	#table {
 	vertical-align: baseline;
 	outline: none;
 	-webkit-font-smoothing: antialiased;
@@ -90,7 +96,7 @@
 	}
 
 	#keywords thead {
-	background: #c9dff0;
+	background: #F4491C
 	}
 
 	#keywords thead tr th { 
@@ -114,14 +120,10 @@
 	}
 
 	#nameTable {
-		color:#15256C;
+	color:#15256C;
 	}
 
 	#scoreTable{
-		color:#15256C;
-	}
-
-	img.hidden {
-    visibility: hidden;
+	color:#15256C;
 	}
 

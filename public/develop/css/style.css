@@ -6,15 +6,6 @@
 	font-size: 13pt;
 	}
 
-	a{
-	color: blue;
-	text-decoration: underline;
-	}
-
-	a:hover{
-	color: red;
-	}	
-
 	h1{
 	font-weight: 300;
 	font-size: 3em;
@@ -30,6 +21,10 @@
 	display: inline-block;
 	width: 100%;
 	margin: 0 0 3em 0;
+	border-radius: 100%;
+	overflow: hidden;
+	width: 18em;
+	height: 18em;
 	}
 
 	.image img{
@@ -47,13 +42,6 @@
 	-webkit-columns: 100px 3;
 	}
 
-	#top .me{
-	border-radius: 100%;
-	overflow: hidden;
-	width: 18em;
-	height: 18em;
-	}
-
 	#top p{
 	font-size: 1em;
 	line-height: 1.75em;
@@ -65,7 +53,7 @@
 	left: 270px;
 	}
 
-	#center {
+	#return {
 	position: absolute;
 	top: 50px;
 	left: 1100px;
