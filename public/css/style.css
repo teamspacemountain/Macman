@@ -8,12 +8,12 @@
 	h1 { 
 	font-family: BDCartoonShoutRegular; 
 	text-align:center;
-	color: #F9966B;
+	color: #F4491C;
 	}
 
 	h2 {  
 	text-align:left;
-	color: #F9966B;
+	color: #F4491C;
 	}
 	
 	p {
@@ -25,6 +25,7 @@
 	margin:0px auto; 
 	font-family:sans-serif; 
 	float:left; 
+	color:#FBF9F7;
 	margin-left: 50px
 	}
 
@@ -62,7 +63,7 @@
 
 	#title { 
 	font-family: BDCartoonShoutRegular; 
-	color: #F9966B;
+	color: #F4491C;
 	font-weight: bold;
 	font-size: 3em;
 	line-height: 1.7em;
@@ -99,6 +100,17 @@
 	#keywords tbody tr td.lalign {
 	text-align: left;
 	}
+
+	#nameTable {
+		color:#15256C;
+	}
+
+	#scoreTable{
+		color:#15256C;
+	}
+
+
+
 
 	img.hidden {
     visibility: hidden;
