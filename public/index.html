@@ -5,7 +5,6 @@
 		<title>The Macman Game</title>
 		<script src="js/modernizr-1.5.min.js"></script>	
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
-		<!--<script src="js/jquery-2.1.1.js"></script>-->
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<script src="js/pacman.js"></script>
 		<script src="js/script.js"></script>
@@ -22,7 +21,7 @@
 
 		<div>
 			<h2>Instructions</h2>
-			<p>Eat all of the pellets while avoiding the monsters! Eat fruit and powerups for extra points.</p>
+			<p>Eat all of the pellets while avoiding the monsters! Grab powerups to eat the ghosts for extra points.</p>
 		</div>
 	  
 		<div>
@@ -38,11 +37,13 @@
 			
 		</div>
 		
-		<span style="color:#15256C; background-color: #F4491C; border:2px solid; padding:2px;">
-			<a href="develop/index.html">
-				<span>Developer Page</span>
-			</a>
-		</span>	
+		<form id="developerpage" action="develop/index.html">
+			<input type="submit" value="Developer Page">
+		</form>
+		
+		<form id="sourcecode" action="https://github.com/teamspacemountain/Macman">
+			<input type="submit" value="Source Code">
+		</form>
 		
 		<!--Center Column-->
 		

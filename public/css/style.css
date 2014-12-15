@@ -43,6 +43,18 @@
 	left:1040px;
 	top:20px;
 	}
+	
+	#developerpage{
+	position: absolute;
+	left:60px;
+	top:625px;
+	}
+	
+	#sourcecode{
+	position: absolute;
+	left:200px;
+	top:625px;
+	}
 
 	/* High Score Table */
 
@@ -108,9 +120,6 @@
 	#scoreTable{
 		color:#15256C;
 	}
-
-
-
 
 	img.hidden {
     visibility: hidden;
