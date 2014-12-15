@@ -9,6 +9,14 @@ That Young Macman: Classic Arcade Game turned Scottish
 1)  Download this project folder  
 2)  Download and install node.js on your computer [here](http://nodejs.org/download/)  
 3)  Download and install mongodb on your computer [here](https://www.mongodb.org/downloads)  
-4)  Navigate to the Macman directory  
+4)  Navigate to the Macman directory via command line    
 5)  On the command line type  
-<code>monospace</code>
+<code>npm install</code>  
+and hit enter  
+6)  On the command line type  
+<code>node app.js</code>  
+and hit enter  
+7)  Now open a new terminal/command prompt window and again navigate to the Macman directory you downloaded earlier  
+8)  Type  
+<code>mongo --dbpath .</code>   
+
