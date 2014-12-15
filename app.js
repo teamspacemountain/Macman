@@ -53,7 +53,7 @@ db.collection('scores').find().toArray(function(err, result){
         if (err) throw err;
         if (result) console.log('Added!');
     });
-    db.collection('scores').insert({name: "Rayquaza", score: 500}, function(err, result) {
+    db.collection('scores').insert({name: "space", score: 10000}, function(err, result) {
         if (err) throw err;
         if (result) console.log('Added!');
     });    
