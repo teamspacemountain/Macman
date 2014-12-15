@@ -18,12 +18,45 @@ app.use(express.static(path.join(__dirname, 'public')));  //automatically create
 
 //app.use(express.json());       // to support JSON-encoded bodies
 //app.use(express.urlencoded()); // to support URL-encoded bodies
-console.log("test");
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-  console.log("get request to /")
+
+db.collection('scores').find().toArray(function(err, result){
+  var currentScores = [];
+  for(var i = 0;i<result.length;i++){
+    currentScores[i] = [result[i].name,result[i].score];
+  }
+  currentScores.sort(function(a,b){return a[1]-b[1]});
+  console.log("First Log");
+  console.log(currentScores.length);
+  if(currentScores.length==0){
+    //populate database with default data
+    db.collection('scores').insert({name: "Blastoise", score: 200}, function(err, result) {
+        if (err) throw err;
+        if (result) console.log('Added!');
+    });
+    db.collection('scores').insert({name: "Dragonite", score: 300}, function(err, result) {
+        if (err) throw err;
+        if (result) console.log('Added!');
+    });
+    db.collection('scores').insert({name: "Vegeta", score: 9001}, function(err, result) {
+        if (err) throw err;
+        if (result) console.log('Added!');
+    });       
+    db.collection('scores').insert({name: "Gyarados", score: 400}, function(err, result) {
+        if (err) throw err;
+        if (result) console.log('Added!');
+    });
+    db.collection('scores').insert({name: "Rayquaza", score: 500}, function(err, result) {
+        if (err) throw err;
+        if (result) console.log('Added!');
+    });    
+  }
 })
+
+// app.get('/', function (req, res) {
+//   res.send('Hello World!')
+//   //console.log("get request to /")
+// })
 
 app.get('/', function (req, res) {
 	//res.sendFile(path.join(__dirname, '../Macman/public', 'index.html'))
@@ -68,54 +101,7 @@ app.get('/updateTable', function(req, res){
 // Handle the put http verb for when we want to save a score
 //ALWAYS REMEMBER TO INSERT DUMMY SCORES TO START THAT MATCH HTML PAGE
 app.post('/gameover', function(req, res) {
-	// var scoreData = req.body.score;
- //  var userScore = scoreData.score;
-	// // console.log("score data is below");
-	// // console.log(scoreData);
-	// //console.log(scoreData.score);
 
- //  //first check to see if db is empty
- //  // db.collection('scores').find().toArray(function(err, result) {
- //  //     if (err) throw err;
- //  //     console.log("logging result");
- //  //     console.log(result);
- //  //     console.log(result.length);
- //  //     if(result.length===0){
- //  //       //default scores
- //  //       console.log("In IF statement");
- //  //       db.collection('scores').insert({scores: [59,67,75,82,90]}, function(err, result) {
- //  //         if (err) throw err;
- //  //         if (result) console.log('Added!');
- //  //       });
- //  //     }
- //  // });
-
-	// db.collection('scores').find().toArray(function(err, result) {
- //    	if (err) throw err;
- //    	//result is an array
- //      console.log("logging result");
- //    	console.log(result);
-      
- //      //insert default scores if database is empty
-
- //    	//console.log(result[0].scores); //this is the array of current high scores
- //      var currHighScores = result[0].scores;
- //    	var isHighScore = determineRank(userScore, currHighScores);
- //      console.log(isHighScore);
- //      db.collection('scores').remove({}, function(err, result) {
- //        if (!err) console.log('VR deleted!');
- //      });
- //      db.collection('scores').insert({scores: isHighScore[2]}, function(err, result) {
- //        if (err) throw err;
- //        if (result) console.log('Added!');
- //      });
-
- //      var returnData = {highScore: isHighScore[0], index: isHighScore[1]};
- //      res.send(returnData);
-
-	// });
-
- //  console.log("OUT OF SCOPE?");
 
 
   var clientData = req.body.score;
@@ -159,6 +145,6 @@ var server = app.listen(8080, function () {
   var host = server.address().address
   var port = server.address().port
 
-  console.log('Example app listening at http://%s:%s', host, port)
+  console.log('Macman listening at http://%s:%s', host, port)
 
 })
