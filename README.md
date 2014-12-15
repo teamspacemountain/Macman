@@ -18,5 +18,11 @@ and hit enter
 and hit enter  
 7)  Now open a new terminal/command prompt window and again navigate to the Macman directory you downloaded earlier  
 8)  Type  
-<code>mongo --dbpath .</code>   
+<code>mongod --dbpath .</code>   
+and hit enter  
+9)  Open another new terminal/command prompt window and make your way to directory Macman  
+10)  Type  
+<code>mongo</code> and then  
+<code>use Macman</code>
+
 
