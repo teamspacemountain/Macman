@@ -19,13 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));  //automatically create
 //app.use(express.json());       // to support JSON-encoded bodies
 //app.use(express.urlencoded()); // to support URL-encoded bodies
 
-//trying to enable CORS
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 
 db.collection('scores').find().toArray(function(err, result){
   var currentScores = [];
