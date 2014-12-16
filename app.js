@@ -99,7 +99,6 @@ app.get('/updateTable', function(req, res, next){
 
 
 // Handle the put http verb for when we want to save a score
-//ALWAYS REMEMBER TO INSERT DUMMY SCORES TO START THAT MATCH HTML PAGE
 app.post('/gameover', function(req, res, next) {
 
 
